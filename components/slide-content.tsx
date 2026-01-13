@@ -1,10 +1,11 @@
 import { SlotMachineText } from './slot-machine-text'
+import { AdventCalendar } from './advent-calendar'
 
 interface Slide {
   id: number
   title: string
   subtitle: string
-  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string }
+  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string } | { type: 'advent-calendar'; items?: Array<{ day: number; content: string }> }
   accent: string
 }
 
@@ -14,6 +15,7 @@ interface SlideContentProps {
 
 export function SlideContent({ slide }: SlideContentProps) {
   const isCanvasAnimation = typeof slide.content === 'object' && slide.content.type === 'canvas-animation';
+  const isAdventCalendar = typeof slide.content === 'object' && slide.content.type === 'advent-calendar';
 
   return (
     <div className={`flex h-full w-full flex-col ${isCanvasAnimation ? 'justify-start pt-12' : 'justify-center'} items-center px-8 ${!isCanvasAnimation ? 'py-24' : ''}`}>
@@ -99,6 +101,8 @@ export function SlideContent({ slide }: SlideContentProps) {
               </p>
             </div>
           </div>
+        ) : slide.content.type === 'advent-calendar' ? (
+          <AdventCalendar items={slide.content.items} />
         ) : null}
       </div>
     </div>

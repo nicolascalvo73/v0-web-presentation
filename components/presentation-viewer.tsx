@@ -69,10 +69,17 @@ const slides = [
   },
   {
     id: 8,
-    title: "Q1 2026",
-    subtitle: "Ready to go?",
-    content:
-      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    title: "",
+    subtitle: "POV de Coty / Lucas / etc... cada semana",
+    content: {
+      type: "advent-calendar" as const,
+      items: [
+        { day: "S11", content: "BLU-5423 🔧" },
+        { day: "S12", content: "BLU-5423 🔧" },
+        { day: "S13", content: "BLU-5423 🔧" },
+        { day: "S14", content: "BLU-5423 ✅" },
+      ],
+    },
     accent: "08",
   },
   {
@@ -81,7 +88,7 @@ const slides = [
     subtitle: "Ready to go?",
     content:
       "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
-    accent: "05",
+    accent: "09",
   },
 ];
 
