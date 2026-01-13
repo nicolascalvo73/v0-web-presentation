@@ -1,8 +1,10 @@
+import { SlotMachineText } from './slot-machine-text'
+
 interface Slide {
   id: number
   title: string
   subtitle: string
-  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string }
+  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string }
   accent: string
 }
 
@@ -11,9 +13,11 @@ interface SlideContentProps {
 }
 
 export function SlideContent({ slide }: SlideContentProps) {
+  const isCanvasAnimation = typeof slide.content === 'object' && slide.content.type === 'canvas-animation';
+
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center px-8 py-24">
-      <div className="mx-auto max-w-4xl text-center">
+    <div className={`flex h-full w-full flex-col ${isCanvasAnimation ? 'justify-start pt-12' : 'justify-center'} items-center px-8 ${!isCanvasAnimation ? 'py-24' : ''}`}>
+      <div className={`mx-auto max-w-4xl text-center ${isCanvasAnimation ? 'relative z-10' : ''}`}>
         {/* Accent number */}
         <div className="mb-8 font-mono text-8xl font-bold text-muted/50 md:text-[12rem]">{slide.accent}</div>
 
@@ -35,6 +39,10 @@ export function SlideContent({ slide }: SlideContentProps) {
               </span>
             ))}
           </p>
+        ) : slide.content.type === 'canvas-animation' ? (
+          <div className="fixed left-0 right-0 bottom-0 z-0" style={{ height: '75%' }}>
+            <SlotMachineText text={slide.content.text} />
+          </div>
         ) : slide.content.type === 'two-columns' ? (
           <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="text-left">

@@ -51,16 +51,18 @@ const slides = [
   },
   {
     id: 6,
-    title: "Q1 2026",
-    subtitle: "Ready to go?",
-    content:
-      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    title: "",
+    subtitle: "cuando estará terminado?",
+    content: {
+      type: "canvas-animation" as const,
+      text: "NO-LO-SE",
+    },
     accent: "06",
   },
   {
     id: 7,
-    title: "Q1 2026",
-    subtitle: "Ready to go?",
+    title: "Segmentación",
+    subtitle: "Mejor hablemos de...",
     content:
       "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
     accent: "05",
