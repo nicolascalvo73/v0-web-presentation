@@ -64,8 +64,8 @@ const slides = [
     title: "Segmentación",
     subtitle: "Mejor hablemos de...",
     content:
-      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
-    accent: "05",
+      "Segmentación en la planificación de código es dividir el problema antes de escribir una sola línea, para separa responsabilidades, entregar etapas, definir limites, aislar cambios y planear dependencias.",
+    accent: "07",
   },
   {
     id: 8,
@@ -73,7 +73,7 @@ const slides = [
     subtitle: "Ready to go?",
     content:
       "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
-    accent: "05",
+    accent: "08",
   },
   {
     id: 9,
