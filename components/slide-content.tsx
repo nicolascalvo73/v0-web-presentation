@@ -27,7 +27,12 @@ export function SlideContent({ slide }: SlideContentProps) {
 
         {/* Content */}
         <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl text-pretty">
-          {slide.content}
+          {slide.content.split('\n').map((line, index, array) => (
+            <span key={index}>
+              {line}
+              {index < array.length - 1 && <br />}
+            </span>
+          ))}
         </p>
       </div>
     </div>

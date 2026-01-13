@@ -8,9 +8,12 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Presentación Interactiva",
-  description: "Una herramienta elegante para presentaciones paso a paso",
-    generator: 'v0.app'
+  title: " ncalvo Q4 2025",
+  description: "Resumen de mi trimestre",
+  generator: 'v0.app',
+  icons: {
+    icon: '/favicon.svg',
+  }
 }
 
 export default function RootLayout({

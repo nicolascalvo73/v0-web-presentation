@@ -8,42 +8,74 @@ import { SlideContent } from "./slide-content"
 const slides = [
   {
     id: 1,
-    title: "Bienvenido",
-    subtitle: "Tu presentación comienza aquí",
+    title: "Bienvenides",
+    subtitle: "Resumen Q4 2025 ncalvo",
     content:
-      "Usa las flechas para navegar entre los slides. Esta es una herramienta simple y elegante para tus presentaciones.",
+      "En las proximas slides mostraré una interpretación de mi performance laboral en el ultimo trimestre del 2025.\nHere we go...",
     accent: "01",
   },
   {
     id: 2,
-    title: "Nuestra Visión",
-    subtitle: "Construyendo el futuro",
+    title: "Diriamos que 👍",
+    subtitle: "Habilidades blandas",
     content:
-      "Creemos en soluciones simples para problemas complejos. Nuestro enfoque se centra en la experiencia del usuario.",
+      "En general perdi algunas decimas en todos los puntos, pero equipo ok, comunicacion ok, resiliencia ok, reducir humor border ok, etc...",
     accent: "02",
   },
   {
     id: 3,
-    title: "El Proceso",
-    subtitle: "Cómo trabajamos",
+    title: "veniamos bien",
+    subtitle: "En cuanto al trabajo en si",
     content:
-      "Seguimos una metodología ágil que nos permite adaptarnos rápidamente a los cambios y entregar valor continuamente.",
+      "| CALIDAD | AUTONOMÍA | OWNERSHIP | COLABORACIÓN | INICIATIVA | APRENDIZAJE | ACTITUD | ADAPTABILIDAD | IMPACTO |",
     accent: "03",
   },
   {
     id: 4,
-    title: "Resultados",
-    subtitle: "Lo que hemos logrado",
+    title: "Estimación y Segentación",
+    subtitle: "acá se pudre la momia",
     content:
-      "Más de 100 proyectos exitosos, clientes satisfechos en todo el mundo y un equipo comprometido con la excelencia.",
+      "Pobre segmentación, estimación deficiente y aún peor comunicación.\n - ¿ncalvo esta trabajando? \n - creemos que si \n - ¿en qué? \n - templates? campañas? está ahi con la compu... \n - ...",
     accent: "04",
   },
   {
     id: 5,
-    title: "Siguiente Paso",
-    subtitle: "¿Listo para comenzar?",
+    title: "Q1 2026",
+    subtitle: "Ready to go?",
     content:
-      "Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos. El éxito está a un paso de distancia.",
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    accent: "05",
+  },
+  {
+    id: 6,
+    title: "Q1 2026",
+    subtitle: "Ready to go?",
+    content:
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    accent: "05",
+  },
+  {
+    id: 7,
+    title: "Q1 2026",
+    subtitle: "Ready to go?",
+    content:
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    accent: "05",
+  },
+  {
+    id: 8,
+    title: "Q1 2026",
+    subtitle: "Ready to go?",
+    content:
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+    accent: "05",
+  },
+  {
+    id: 9,
+    title: "Q1 2026",
+    subtitle: "Ready to go?",
+    content:
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
     accent: "05",
   },
 ]
@@ -170,13 +202,7 @@ export function PresentationViewer() {
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </button>
       </div>
-
-      {/* Keyboard hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-2 text-xs text-muted-foreground">
-        <kbd className="rounded border border-border bg-muted px-2 py-1 font-mono">←</kbd>
-        <kbd className="rounded border border-border bg-muted px-2 py-1 font-mono">→</kbd>
-        <span className="ml-1">para navegar</span>
-      </div>
+ 
     </div>
   )
 }
