@@ -1,7 +1,7 @@
 'use client'
 
 interface AdventCalendarProps {
-  items?: Array<{ day: number; content: string }>
+  items?: Array<{ day: string | number; content: string }>
 }
 
 export function AdventCalendar({ items }: AdventCalendarProps) {

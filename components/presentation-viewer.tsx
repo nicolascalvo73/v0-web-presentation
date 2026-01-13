@@ -87,7 +87,7 @@ const slides = [
     title: "Q1 2026",
     subtitle: "Ready to go?",
     content:
-      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR y SEGMENTAR!!!",
+      "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR, SEGMENTAR y COMUNICAR!!!",
     accent: "09",
   },
 ];
@@ -145,7 +145,7 @@ export function PresentationViewer() {
       {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-8 py-6">
         <div className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
-          Presentación
+          ncalvo Q4 2025
         </div>
         <div className="text-sm font-mono text-muted-foreground">
           {String(currentSlide + 1).padStart(2, "0")} /{" "}

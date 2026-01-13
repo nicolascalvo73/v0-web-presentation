@@ -5,7 +5,7 @@ interface Slide {
   id: number
   title: string
   subtitle: string
-  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string } | { type: 'advent-calendar'; items?: Array<{ day: number; content: string }> }
+  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string } | { type: 'advent-calendar'; items?: Array<{ day: string | number; content: string }> }
   accent: string
 }
 
