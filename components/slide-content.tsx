@@ -2,7 +2,7 @@ interface Slide {
   id: number
   title: string
   subtitle: string
-  content: string
+  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string }
   accent: string
 }
 
@@ -26,14 +26,72 @@ export function SlideContent({ slide }: SlideContentProps) {
         </h1>
 
         {/* Content */}
-        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl text-pretty">
-          {slide.content.split('\n').map((line, index, array) => (
-            <span key={index}>
-              {line}
-              {index < array.length - 1 && <br />}
-            </span>
-          ))}
-        </p>
+        {typeof slide.content === 'string' ? (
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl text-pretty">
+            {slide.content.split('\n').map((line, index, array) => (
+              <span key={index}>
+                {line}
+                {index < array.length - 1 && <br />}
+              </span>
+            ))}
+          </p>
+        ) : slide.content.type === 'two-columns' ? (
+          <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="text-left">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {slide.content.col1.split('\n').map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
+            <div className="text-left">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {slide.content.col2.split('\n').map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        ) : slide.content.type === 'three-columns' ? (
+          <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="text-left">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {slide.content.col1.split('\n').map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
+            <div className="text-left">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {slide.content.col2.split('\n').map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
+            <div className="text-left">
+              <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {slide.content.col3.split('\n').map((line, index, array) => (
+                  <span key={index}>
+                    {line}
+                    {index < array.length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   )
