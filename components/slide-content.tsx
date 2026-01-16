@@ -5,7 +5,7 @@ interface Slide {
   id: number
   title: string
   subtitle: string
-  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string } | { type: 'advent-calendar'; items?: Array<{ day: string | number; content: string }> }
+  content: string | { type: 'two-columns'; col1: string; col2: string } | { type: 'three-columns'; col1: string; col2: string; col3: string } | { type: 'canvas-animation'; text: string } | { type: 'advent-calendar'; items?: Array<{ day: string | number; content: string }> } | { type: 'link'; text: string; url: string }
   accent: string
 }
 
@@ -16,6 +16,7 @@ interface SlideContentProps {
 export function SlideContent({ slide }: SlideContentProps) {
   const isCanvasAnimation = typeof slide.content === 'object' && slide.content.type === 'canvas-animation';
   const isAdventCalendar = typeof slide.content === 'object' && slide.content.type === 'advent-calendar';
+  const isLink = typeof slide.content === 'object' && slide.content.type === 'link';
 
   return (
     <div className={`flex h-full w-full flex-col ${isCanvasAnimation ? 'justify-start pt-12' : 'justify-center'} items-center px-8 ${!isCanvasAnimation ? 'py-24' : ''}`}>
@@ -103,6 +104,15 @@ export function SlideContent({ slide }: SlideContentProps) {
           </div>
         ) : slide.content.type === 'advent-calendar' ? (
           <AdventCalendar items={slide.content.items} />
+        ) : slide.content.type === 'link' ? (
+          <a
+            href={slide.content.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors underline decoration-2 underline-offset-4"
+          >
+            {slide.content.text}
+          </a>
         ) : null}
       </div>
     </div>

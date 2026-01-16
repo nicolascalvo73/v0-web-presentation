@@ -90,6 +90,17 @@ const slides = [
       "Hare lo posible para reforzar lo que andó...\nsobre todo ESTIMAR, SEGMENTAR y COMUNICAR!!!",
     accent: "09",
   },
+  {
+    id: 10,
+    title: "Vamo' a divertirlo'",
+    subtitle: "Lets play!!!",
+    content: {
+      type: "link" as const,
+      text: "Juguemos",
+      url: "https://play.kahoot.it/v2/?quizId=44fcb8b8-4d37-4208-b49e-244afe3ab97a",
+    },
+    accent: "10",
+  },
 ];
 
 export function PresentationViewer() {
